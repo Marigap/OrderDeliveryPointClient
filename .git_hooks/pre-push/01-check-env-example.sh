@@ -1,1 +1,0 @@
-../scripts/check-env-example.sh

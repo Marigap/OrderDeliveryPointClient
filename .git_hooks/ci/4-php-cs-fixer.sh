@@ -1,1 +1,0 @@
-../scripts/php-cs-fixer.sh

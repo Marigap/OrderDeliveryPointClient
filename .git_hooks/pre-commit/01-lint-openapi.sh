@@ -1,1 +1,0 @@
-../scripts/lint-openapi.sh
