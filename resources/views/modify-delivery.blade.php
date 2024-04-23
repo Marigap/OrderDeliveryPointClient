@@ -2,7 +2,8 @@
 
 @section("form")
     <div class="container">
-      <div class="row">
+        <div class="row">
+      <div class="col">
           <div class="row">
               <div class="flex-column mb-2">
                 <h1>Форма для обновления статуса доставки</h1>
@@ -65,18 +66,21 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="col">
             <h1>Получить все активные доставки</h1>
             <form action="/get-all-deliveries" method="get">
               @csrf
                 <div class="form-group">
                 <label for="text-area">Информация по доставкам</label>
                 <textarea class="form-control" id="text-area" rows="3">
-                    @foreach ($deliveries as $delivery){{json_encode($delivery, JSON_UNESCAPED_UNICODE) . PHP_EOL}}@endforeach
+                    @foreach ($deliveries as $delivery)
+                        {{json_encode($delivery, JSON_UNESCAPED_UNICODE) . PHP_EOL}}
+                    @endforeach
                 </textarea>
               </div>
               <button type="submit" class="btn btn-primary">Отправить</button>
             </form>
           </div>
+            </div>
       </div>
 @endsection
