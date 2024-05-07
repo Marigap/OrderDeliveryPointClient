@@ -25,7 +25,7 @@ class UpdateDeliveryStatusRequest extends FormRequest
     {
         return [
             "delivery_id" => "required",
-            "status" => "required|in:accepted,processing,in_transit,delivered,picked_up",
+            "status" => "required|in:processing,in_transit,delivered,picked_up",
             "current_location" => "required",
         ];
     }

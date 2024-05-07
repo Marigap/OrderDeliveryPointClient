@@ -10,11 +10,10 @@ use Illuminate\Http\Request;
 
 class OrderDeliveriesController extends Controller
 {
-
     public function getAllDeliveries()
     {
         $response = Http::get('http://localhost:8000/api/v1/order-deliveries');
-        return view('modify-delivery', ['deliveries' => $response->json()]);
+        return $response->json();
     }
 
     // TODO: rename to AddDeliveryRequest
@@ -37,17 +36,21 @@ class OrderDeliveriesController extends Controller
 
     public function updateDeliveryStatus(UpdateDeliveryStatusRequest $request)
     {
+        echo "update delivery call";
+
         $apiUrl = "http://localhost:8000/api/v1/order-deliveries/" . $request->delivery_id;
-        return Http::put($apiUrl, [
+        $response = Http::put($apiUrl, [
             "status" => $request->status,
             "current_location" => $request->current_location
         ]);
+        return $response->json();
     }
 
     public function deleteDelivery(DeleteDeliveryRequest $request)
     {
         $apiUrl = "http://localhost:8000/api/v1/order-deliveries/" . $request->delivery_id;
-        return Http::delete($apiUrl, []);
+        $response = Http::delete($apiUrl, []);
+        return $response->json();
     }
 
 }

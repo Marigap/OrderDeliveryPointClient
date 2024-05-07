@@ -14,7 +14,7 @@ class DeleteDeliveryRequest extends FormRequest
     public function authorize()
     {
         // TODO: don't allow deletion yet
-        return false;
+        return true;
     }
 
     /**
