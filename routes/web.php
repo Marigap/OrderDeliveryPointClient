@@ -14,17 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/add-delivery', function () {
-    return view('add-delivery');
+
+Route::middleware(['web'])->group(function() {
+    Route::get('/add-delivery', function () {
+        return view('add-delivery');
+    });
+
+    Route::get('/modify-delivery', function () {
+        return view('modify-delivery');
+    });
 });
 
-Route::get('/modify-delivery', function () {
-    return view('modify-delivery', ['deliveries' => []]);
-});
 
-Route::get('/get-all-deliveries', [OrderDeliveriesController::class, 'getAllDeliveries']);
-Route::post('/add-delivery', [OrderDeliveriesController::class, 'addDelivery']);
-// TODO: add dynamic id param to URI (/modify-delivery/{delivery_id})
-Route::put('/update-delivery-status', [OrderDeliveriesController::class, 'updateDeliveryStatus']);
-Route::delete('/delete-delivery', [OrderDeliveriesController::class, 'deleteDelivery']);
 
