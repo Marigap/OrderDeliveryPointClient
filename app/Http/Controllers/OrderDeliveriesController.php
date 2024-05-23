@@ -48,6 +48,7 @@ class OrderDeliveriesController extends Controller
 
     public function deleteDelivery(DeleteDeliveryRequest $request)
     {
+        echo 'delete delivery status call';
         $apiUrl = "http://localhost:8000/api/v1/order-deliveries/" . $request->delivery_id;
         $response = Http::delete($apiUrl, []);
         return $response->json();

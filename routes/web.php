@@ -14,16 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::middleware(['web'])->group(function() {
-    Route::get('/add-delivery', function () {
-        return view('add-delivery');
-    });
-
-    Route::get('/modify-delivery', function () {
-        return view('modify-delivery');
-    });
+Route::get('/add-delivery', function () {
+    return view('add-delivery');
 });
+
+Route::get('/modify-delivery', function () {
+    return view('modify-delivery');
+});
+
 
 
 

@@ -15,10 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
 Route::get('/get-all-deliveries', [OrderDeliveriesController::class, 'getAllDeliveries']);
 Route::post('/add-delivery', [OrderDeliveriesController::class, 'addDelivery']);
 // TODO: add dynamic id param to URI (/modify-delivery/{delivery_id})

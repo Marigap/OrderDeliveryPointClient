@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
 @section("form")
-    <div class="container">
+   <div class="container">
     <h1>Форма заказа</h1>
     <form action="/add-delivery" method="post">
       @csrf
